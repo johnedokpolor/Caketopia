@@ -1,0 +1,82 @@
+@font-face {
+  font-family: Outfit;
+  src: url(./assets/Outfit-Regular.ttf);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: Outfit;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    animation: fade 1s;
+  }
+  .greet span {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .result::-webkit-scrollbar {
+    display: none;
+  }
+  .recent::-webkit-scrollbar {
+    display: none;
+  }
+  .loader hr {
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 3s linear infinite;
+  }
+  .title {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  @keyframes loader {
+    0% {
+      background-position: -800px 0px;
+    }
+    100% {
+      background-position: 800px 0px;
+    }
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  label {
+    @apply mb-2 mt-5 block;
+  }
+  input {
+    @apply w-full rounded-md border border-gray-700 bg-transparent p-2 outline-0;
+  }
+  .n button {
+    @apply mt-2 rounded-md bg-black px-5 py-2 text-white duration-300 hover:text-[1.1rem] md:cursor-pointer;
+  }
+  .dark {
+    @apply overflow-x-hidden bg-[#131314] text-white;
+  }
+  .light {
+    @apply overflow-x-hidden;
+  }
+  .sidebar img {
+    @apply w-5;
+  }
+  .result img {
+    @apply w-10;
+  }
+  .recent-entry {
+    @apply flex cursor-pointer items-start gap-3 rounded-3xl p-3 text-[#282828] hover:bg-[#e2e6eb];
+  }
+}
